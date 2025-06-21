@@ -140,6 +140,17 @@ main {
     margin-bottom: 60px; /* Erhöht den Abstand nach unten */
 }
 
+.breadcrumb a {
+    text-decoration: none; /* Entfernt die Unterstreichung */
+    color: gray; /* Setzt die Schriftfarbe auf Grau */
+    cursor: pointer; /* Zeigt an, dass es ein Link ist */
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline; /* Optional: Unterstreichung beim Hovern */
+    color: gray; /* Farbe bleibt Grau auch beim Hovern */
+}
+
 .alphabet-container {
     display: flex;
     flex-wrap: wrap;
