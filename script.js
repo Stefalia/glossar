@@ -105,3 +105,27 @@ function loadContent(page) {
         `;
     }
 }
+
+function searchTerms() {
+    const searchInput = document.getElementById('search-input').value.toLowerCase();
+    const content = document.getElementById('content');
+
+    // Suche in allen alphabetischen Begriffen
+    const items = content.querySelectorAll('.alphabet-item');
+    items.forEach(item => {
+        const header = item.querySelector('.alphabet-header').textContent.toLowerCase();
+        const terms = Array.from(item.querySelectorAll('ul li')).map(li =>
+            li.textContent.toLowerCase()
+        );
+
+        // Überprüfe, ob der Suchbegriff im Header oder in den Begriffen vorkommt
+        if (
+            header.includes(searchInput) ||
+            terms.some(term => term.includes(searchInput))
+        ) {
+            item.style.display = 'block'; // Zeige das Element an
+        } else {
+            item.style.display = 'none'; // Verstecke das Element
+        }
+    });
+}

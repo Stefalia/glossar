@@ -32,8 +32,18 @@
         </nav>
         <div class="container">
             <main>
-                <div class="breadcrumb" id="breadcrumb">
-                    <a href="#" onclick="loadContent('startseite')">Startseite</a>
+                <div class="breadcrumb-container">
+                    <div class="breadcrumb" id="breadcrumb">
+                        <a href="#" onclick="loadContent('startseite')">Startseite</a>
+                    </div>
+                    <div class="search-container">
+                        <input
+                            type="text"
+                            id="search-input"
+                            placeholder="Suche..."
+                            oninput="searchTerms()"
+                        />
+                    </div>
                 </div>
                 <div id="content">
                     <h1>Willkommen</h1>
