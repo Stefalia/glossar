@@ -37,12 +37,10 @@
                         <a href="#" onclick="loadContent('startseite')">Startseite</a>
                     </div>
                     <div class="search-container">
-                        <input
-                            type="text"
-                            id="search-input"
-                            placeholder="Suche..."
-                            oninput="searchTerms()"
-                        />
+                        <form id="search-form" onsubmit="searchTerms(); return false;">
+                            <input type="text" id="search-input" placeholder="Suchbegriff eingeben" />
+                            
+                        </form>
                     </div>
                 </div>
                 <div id="content">
@@ -105,7 +103,8 @@
     <footer>
         <p>© 2025 Log7-Consult GmbH</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js">
+    </script>
 </body>
 </html>
 

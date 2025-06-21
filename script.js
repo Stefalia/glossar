@@ -63,24 +63,71 @@ function loadContent(page) {
 
 function searchTerms() {
     const searchInput = document.getElementById('search-input').value.toLowerCase();
-    const content = document.getElementById('content');
+    const files = ['index.html', 'api.html', 'scrum.html', 'ide.html']; // Liste der Dateien, die durchsucht werden sollen
 
-    // Suche in allen alphabetischen Begriffen
-    const items = content.querySelectorAll('.alphabet-item');
-    items.forEach(item => {
-        const header = item.querySelector('.alphabet-header').textContent.toLowerCase();
-        const terms = Array.from(item.querySelectorAll('ul li')).map(li =>
-            li.textContent.toLowerCase()
-        );
+    if (!searchInput) {
+        alert('Bitte geben Sie einen Suchbegriff ein.');
+        return;
+    }
 
-        // Überprüfe, ob der Suchbegriff im Header oder in den Begriffen vorkommt
-        if (
-            header.includes(searchInput) ||
-            terms.some(term => term.includes(searchInput))
-        ) {
-            item.style.display = 'block'; // Zeige das Element an
-        } else {
-            item.style.display = 'none'; // Verstecke das Element
-        }
+    // Lade und durchsuche jede Datei
+    Promise.all(
+        files.map(file =>
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Fehler beim Laden der Datei: ${file} (Status: ${response.status})`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    // Erstelle ein temporäres DOM-Element, um den HTML-Inhalt zu parsen
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+
+                    // Extrahiere nur den relevanten Teil (z. B. den Inhalt im <main>-Tag)
+                    const mainContent = doc.querySelector('main')?.innerText || '';
+
+                    // Überprüfe, ob der Suchbegriff im extrahierten Inhalt vorkommt
+                    if (mainContent.toLowerCase().includes(searchInput)) {
+                        // Navigiere direkt zur entsprechenden Seite
+                        window.location.href = file;
+                        throw 'StopSearch'; // Beende die Suche, da ein Treffer gefunden wurde
+                    }
+                })
+                .catch(error => {
+                    if (error !== 'StopSearch') {
+                        console.error('Fehler beim Laden der Datei:', error);
+                    }
+                })
+        )
+    ).then(() => {
+        // Wenn kein Treffer gefunden wurde
+        alert('Keine Ergebnisse gefunden.');
     });
 }
+
+document.getElementById("search-input").addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase();
+    const alphabetItems = document.querySelectorAll(".alphabet-item");
+
+    alphabetItems.forEach(item => {
+        const header = item.querySelector(".alphabet-header").textContent.toLowerCase();
+        const listItems = item.querySelectorAll("ul li");
+
+        let hasMatch = false;
+
+        listItems.forEach(listItem => {
+            const text = listItem.textContent.toLowerCase();
+            if (text.includes(searchTerm)) {
+                listItem.style.display = "list-item"; // Zeige passende Einträge
+                hasMatch = true;
+            } else {
+                listItem.style.display = "none"; // Verstecke unpassende Einträge
+            }
+        });
+
+        // Zeige oder verstecke den gesamten alphabet-item basierend auf Treffern
+        item.style.display = hasMatch || header.includes(searchTerm) ? "block" : "none";
+    });
+});
