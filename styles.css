@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #006d6f; /* Petrol */
+    color: white;
+    padding: 10px;
+}
+
+.headline h1 {
+    margin: 0;
+}
+
+.logo {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    margin-top: 0; /* Entfernt den Abstand zwischen Header und Navigation/Inhalt */
+    gap: 20px; /* Fügt Abstand zwischen Navigation und Inhaltsbereich hinzu */
+}
+
+nav {
+    width: 200px;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.main-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative; /* Ermöglicht die Positionierung der Unternavigation */
+    padding: 10px;
+    padding-left: 25px;
+    color: gray;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    background-color: white; /* Standard-Hintergrundfarbe */
+}
+
+.nav-item:hover {
+    background-color: lightgray; /* Hover-Effekt nur für den Hauptpunkt */
+}
+
+.nav-item:hover > .sub-nav {
+    display: block; /* Zeigt die Unternavigation beim Hovern an */
+}
+
+.nav-item.active {
+    background-color: gray;
+    color: white;
+}
+
+.sub-nav {
+    display: none; /* Standardmäßig ausgeblendet */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: white; /* Weißer Hintergrund für die Unterpunkte */
+    position: absolute; /* Positioniert die Unterpunkte unabhängig vom Hauptpunkt */
+    top: 100%; /* Setzt die Unterpunkte direkt unter den Hauptpunkt */
+    left: 0;
+    width: 100%; /* Gleiche Breite wie der Hauptpunkt */
+    z-index: 1;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Schatten für die Unterpunkte */
+}
+
+.sub-item {
+    padding: 10px;
+    color: gray;
+    cursor: pointer;
+}
+
+.sub-item a {
+    text-decoration: none;
+    color: gray;
+    display: block; /* Macht den Link block-level, sodass er die gesamte Breite einnimmt */
+    transition: color 0.3s ease; /* Sanfter Übergang der Schriftfarbe */
+}
+
+.sub-item a:hover {
+    color: #006d6f; /* Petrol-Farbe beim Hovern */
+}
+
+.sub-item:hover {
+    background-color: white; /* Kein Hintergrundwechsel beim Hovern */
+}
+
+main {
+    width: calc(85% + 10px); /* Passt die Breite des Inhaltsbereichs an */
+    padding: 20px;
+}
+
+.breadcrumb {
+    color: gray;
+    margin-top: 20px; /* Fügt Abstand oberhalb der Breadcrumb hinzu */
+    margin-bottom: 60px; /* Erhöht den Abstand nach unten */
+}
+
+.alphabet-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.alphabet-item {
+    width: 30%;
+    padding: 10px;
+}
+
+.alphabet-header {
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Für sanften Übergang */
+}
+
+.alphabet-header:hover {
+    background-color: lightgray; /* Gleiche Farbe wie beim Hover in main-nav */
+}
+
+.search-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.last-modified {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: gray;
+    font-size: 12px;
+}
+
+h1 {
+    margin-top: 20px; /* Fügt Abstand oberhalb der H1 hinzu */
+}
