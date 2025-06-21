@@ -71,8 +71,13 @@ nav {
 }
 
 .nav-item.active {
-    background-color: gray;
+    background-color: #f0f0f0; /* Helles Grau für den aktiven Zustand */
     color: white;
+    padding-top: 5px;
+}
+
+.nav-item.active > .sub-nav {
+    display: block; /* Unterpunkte bleiben sichtbar */
 }
 
 .sub-nav {
@@ -84,6 +89,10 @@ nav {
     position: relative; /* Bleibt im normalen Dokumentfluss */
     z-index: 1;
     /* Entfernt den Schatten */
+}
+
+.nav-item:hover > .sub-nav {
+    display: block; /* Zeigt die Unterpunkte beim Hovern */
 }
 
 .sub-item {
@@ -104,6 +113,12 @@ nav {
 .sub-item a:hover {
     color: #006d6f; /* Petrol-Farbe beim Hovern */
     font-weight: bold;
+}
+
+.sub-item a.active {
+    
+    font-weight: bold; /* Schrift wird fett für aktiven Unterpunkt */
+    color: #006d6f; /* Petrol-Farbe für aktiven Unterpunkt */
 }
 
 .sub-item:hover {
