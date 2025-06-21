@@ -15,6 +15,8 @@ header {
 
 .headline h1 {
     margin: 0;
+    margin-left:285px;
+    font-size: 60px;
 }
 
 .logo {
@@ -30,9 +32,10 @@ header {
 }
 
 nav {
-    width: 200px;
+    width: 250px;
     background-color: white;
-    border-right: 3px solid #006d6f; /* Petrolfarbene Linie */
+    margin-top: 100px;
+    margin-right: 30px;
 }
 
 .main-nav {
@@ -42,7 +45,7 @@ nav {
 }
 
 .nav-text {
-    padding-left: 10px;
+    padding-left: 20px;
     color: gray;
     font-weight: bold; /* Fett gedruckter Text */
     text-transform: uppercase; /* Großbuchstaben */
@@ -100,6 +103,7 @@ nav {
 
 .sub-item a:hover {
     color: #006d6f; /* Petrol-Farbe beim Hovern */
+    font-weight: bold;
 }
 
 .sub-item:hover {
