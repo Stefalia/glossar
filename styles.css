@@ -41,21 +41,30 @@ nav {
     padding: 0;
 }
 
+.nav-text {
+    padding-left: 10px;
+    color: gray;
+    font-weight: bold; /* Fett gedruckter Text */
+    text-transform: uppercase; /* Großbuchstaben */
+}
+
 .nav-item {
     position: relative; /* Ermöglicht die Positionierung der Unternavigation */
-    padding: 10px;
     color: gray;
     border-bottom: 1px solid #006d6f; /* Petrolfarbene Trennlinie */
     cursor: pointer;
     background-color: white; /* Standard-Hintergrundfarbe */
+   
 }
 
+/* Entfernt den Hover-Effekt für den Hintergrund */
 .nav-item:hover {
-    background-color: lightgray; /* Hover-Effekt nur für den Hauptpunkt */
+    background-color: lightgray; /* Hintergrund wird grau beim Hovern */
+    padding-top: 5px;
 }
 
 .nav-item:hover > .sub-nav {
-    display: block; /* Zeigt die Unternavigation beim Hovern an */
+    display:block; /* Zeigt die Unternavigation beim Hovern an */
 }
 
 .nav-item.active {
@@ -69,16 +78,14 @@ nav {
     margin: 0;
     padding: 0;
     background-color: white; /* Weißer Hintergrund für die Unterpunkte */
-    position: absolute; /* Positioniert die Unterpunkte unabhängig vom Hauptpunkt */
-    top: 100%; /* Setzt die Unterpunkte direkt unter den Hauptpunkt */
-    left: 0;
-    width: 100%; /* Gleiche Breite wie der Hauptpunkt */
+    position: relative; /* Bleibt im normalen Dokumentfluss */
     z-index: 1;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Schatten für die Unterpunkte */
+    /* Entfernt den Schatten */
 }
 
 .sub-item {
-    padding: 10px;
+    padding: 0px;
+    padding-left: 15px;
     color: gray;
     cursor: pointer;
 }
@@ -86,9 +93,9 @@ nav {
 .sub-item a {
     text-decoration: none;
     color: gray;
-    display: block; /* Macht den Link block-level, sodass er die gesamte Breite einnimmt */
+    display: block;
     padding: 10px;
-    transition: color 0.3s ease; /* Sanfter Übergang der Schriftfarbe */
+    transition: color 0.3s ease;
 }
 
 .sub-item a:hover {
