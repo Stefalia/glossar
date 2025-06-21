@@ -53,9 +53,7 @@ function loadContent(page) {
                 <div class="alphabet-item">
                     <div class="alphabet-header">A</div>
                     <ul>
-                        <li>Dummytext 1</li>
-                        <li>Dummytext 2</li>
-                        <li>Dummytext 3</li>
+                        <li>API</li>
                     </ul>
                 </div>
                 <div class="alphabet-item">

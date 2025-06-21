@@ -34,7 +34,7 @@ header {
 nav {
     width: 250px;
     background-color: white;
-    margin-top: 100px;
+    margin-top: 120px;
     margin-right: 30px;
 }
 
@@ -177,8 +177,28 @@ main {
     transition: background-color 0.3s ease; /* Für sanften Übergang */
 }
 
-.alphabet-header:hover {
-    background-color: lightgray; /* Gleiche Farbe wie beim Hover in main-nav */
+.alphabet-container .alphabet-item ul {
+    list-style: disc; /* Standardmäßige Aufzählungspunkte */
+    padding-left: 20px; /* Abstand für die Aufzählungspunkte */
+}
+
+.alphabet-container .alphabet-item ul li {
+    color: gray; /* Schriftfarbe der Listenpunkte bleibt Grau */
+}
+
+.alphabet-container .alphabet-item ul li::marker {
+    color: #006d6f; /* Petrolfarbe für die Aufzählungszeichen */
+}
+
+.alphabet-container .alphabet-item ul li a {
+    text-decoration: none; /* Entfernt die Unterstreichung */
+    color: gray; /* Setzt die Schriftfarbe auf Grau */
+}
+
+.alphabet-container .alphabet-item ul li a:hover {
+    text-decoration: none; /* Optional: Unterstreichung beim Hovern */
+    color: #004d4f; /* Dunkleres Petrol beim Hovern */
+    font-weight: bold; /* Fett gedruckt beim Hovern */    
 }
 
 .search-container {
