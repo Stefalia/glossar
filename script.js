@@ -1,107 +1,63 @@
 function loadContent(page) {
     const content = document.getElementById('content');
     const breadcrumb = document.getElementById('breadcrumb');
-    const navIT = document.getElementById('nav-it');
+    const navIT = document.getElementById('nav-it'); // Hauptnavigation IT
     const linkAPI = document.getElementById('link-api');
     const linkScrum = document.getElementById('link-scrum');
     const linkIDE = document.getElementById('link-ide');
 
-    // Entferne die aktive Klasse von allen Links
+    // Entferne die aktive Klasse von allen Links und der Hauptnavigation
     linkAPI.classList.remove('active');
     linkScrum.classList.remove('active');
     linkIDE.classList.remove('active');
     navIT.classList.remove('active');
 
-    // Lade den entsprechenden Inhalt und passe die Breadcrumb an
+    // Bestimme die Datei, die geladen werden soll
+    let file = '';
     if (page === 'api') {
-        content.innerHTML = `
-            <h1>API</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel nisi id odio tincidunt tincidunt.</p>
-            <p>Curabitur vehicula, justo at tincidunt fermentum, sapien justo tincidunt eros, non tincidunt ligula lorem non justo.</p>
-        `;
+        file = 'api.html';
         breadcrumb.innerHTML = `
             <a href="#" onclick="loadContent('startseite')">Startseite</a> > API
         `;
-        linkAPI.classList.add('active');
-        navIT.classList.add('active');
+        linkAPI.classList.add('active'); // Markiere den API-Link als aktiv
+        navIT.classList.add('active'); // Halte die Hauptnavigation IT geöffnet
     } else if (page === 'scrum') {
-        content.innerHTML = `
-            <h1>Scrum</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-        `;
+        file = 'scrum.html';
         breadcrumb.innerHTML = `
             <a href="#" onclick="loadContent('startseite')">Startseite</a> > Scrum
         `;
-        linkScrum.classList.add('active');
-        navIT.classList.add('active');
+        linkScrum.classList.add('active'); // Markiere den Scrum-Link als aktiv
+        navIT.classList.add('active'); // Halte die Hauptnavigation IT geöffnet
     } else if (page === 'ide') {
-        content.innerHTML = `
-            <h1>IDE</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
-        `;
+        file = 'ide.html';
         breadcrumb.innerHTML = `
             <a href="#" onclick="loadContent('startseite')">Startseite</a> > IDE
         `;
-        linkIDE.classList.add('active');
-        navIT.classList.add('active');
+        linkIDE.classList.add('active'); // Markiere den IDE-Link als aktiv
+        navIT.classList.add('active'); // Halte die Hauptnavigation IT geöffnet
     } else if (page === 'startseite') {
-        // Lade den ursprünglichen HTML-Inhalt der Startseite
-        content.innerHTML = `
-            <h1>Willkommen</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div class="alphabet-container">
-                <div class="alphabet-item">
-                    <div class="alphabet-header">A</div>
-                    <ul>
-                        <li><a href="#" onclick="loadContent('api')" id="link-api">API</a></li>
-                    </ul>
-                </div>
-                <div class="alphabet-item">
-                    <div class="alphabet-header">B</div>
-                    <ul>
-                        <li>Dummytext 4</li>
-                        <li>Dummytext 5</li>
-                        <li>Dummytext 6</li>
-                    </ul>
-                </div>
-                <div class="alphabet-item">
-                    <div class="alphabet-header">C</div>
-                    <ul>
-                        <li>Dummytext 7</li>
-                        <li>Dummytext 8</li>
-                        <li>Dummytext 9</li>
-                    </ul>
-                </div>
-                <div class="alphabet-item">
-                    <div class="alphabet-header">D</div>
-                    <ul>
-                        <li>Dummytext 10</li>
-                        <li>Dummytext 11</li>
-                        <li>Dummytext 12</li>
-                    </ul>
-                </div>
-                <div class="alphabet-item">
-                    <div class="alphabet-header">E</div>
-                    <ul>
-                        <li>Dummytext 13</li>
-                        <li>Dummytext 14</li>
-                        <li>Dummytext 15</li>
-                    </ul>
-                </div>
-                <div class="alphabet-item">
-                    <div class="alphabet-header">F</div>
-                    <ul>
-                        <li>Dummytext 16</li>
-                        <li>Dummytext 17</li>
-                        <li>Dummytext 18</li>
-                    </ul>
-                </div>
-            </div>
-        `;
-        breadcrumb.innerHTML = `
-            <a href="#" onclick="loadContent('startseite')">Startseite</a>
-        `;
+        // Lade den ursprünglichen Inhalt der Startseite
+        file = 'index.html';
+        location.reload(); // Lädt die Startseite neu
+        return;
+    }
+
+    // Lade die HTML-Datei und füge sie in den Content-Bereich ein
+    if (file) {
+        fetch(file)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Fehler beim Laden der Datei: ${file} (Status: ${response.status})`);
+                }
+                return response.text();
+            })
+            .then(html => {
+                content.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Fehler beim Laden der Seite:', error);
+                content.innerHTML = '<p>Fehler beim Laden der Seite.</p>';
+            });
     }
 }
 
