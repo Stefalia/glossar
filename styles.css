@@ -24,16 +24,15 @@ header {
     text-align: center;
 }
 
-.container {
+.layout {
     display: flex;
-    margin-top: 0; /* Entfernt den Abstand zwischen Header und Navigation/Inhalt */
-    gap: 20px; /* Fügt Abstand zwischen Navigation und Inhaltsbereich hinzu */
+    flex-direction: row; /* Navigation und Inhalt nebeneinander */
 }
 
 nav {
     width: 200px;
     background-color: white;
-    border: 1px solid #ccc;
+    border-right: 3px solid #006d6f; /* Petrolfarbene Linie */
 }
 
 .main-nav {
@@ -45,9 +44,8 @@ nav {
 .nav-item {
     position: relative; /* Ermöglicht die Positionierung der Unternavigation */
     padding: 10px;
-    padding-left: 25px;
     color: gray;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #006d6f; /* Petrolfarbene Trennlinie */
     cursor: pointer;
     background-color: white; /* Standard-Hintergrundfarbe */
 }
@@ -89,6 +87,7 @@ nav {
     text-decoration: none;
     color: gray;
     display: block; /* Macht den Link block-level, sodass er die gesamte Breite einnimmt */
+    padding: 10px;
     transition: color 0.3s ease; /* Sanfter Übergang der Schriftfarbe */
 }
 
@@ -100,9 +99,13 @@ nav {
     background-color: white; /* Kein Hintergrundwechsel beim Hovern */
 }
 
-main {
-    width: calc(85% + 10px); /* Passt die Breite des Inhaltsbereichs an */
+.container {
+    flex: 1; /* Nimmt die gesamte restliche Breite ein */
     padding: 20px;
+}
+
+main {
+    width: 100%; /* Nimmt die gesamte Breite des Containers ein */
 }
 
 .breadcrumb {
