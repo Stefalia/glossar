@@ -45,6 +45,7 @@ function loadContent(page) {
         linkIDE.classList.add('active');
         navIT.classList.add('active');
     } else if (page === 'startseite') {
+        // Lade den ursprünglichen HTML-Inhalt der Startseite
         content.innerHTML = `
             <h1>Willkommen</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -53,7 +54,7 @@ function loadContent(page) {
                 <div class="alphabet-item">
                     <div class="alphabet-header">A</div>
                     <ul>
-                        <li>API</li>
+                        <li><a href="#" onclick="loadContent('api')" id="link-api">API</a></li>
                     </ul>
                 </div>
                 <div class="alphabet-item">
