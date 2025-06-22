@@ -6,12 +6,14 @@ function loadContent(page) {
     const linkHTTPS = document.getElementById('link-https');
     const linkIDE = document.getElementById('link-ide');
     const linkPHISHING = document.getElementById('link-phishing');
+    const linkVERSIONCONTROL = document.getElementById('link-versioncontrol');
 
     // Entferne die aktive Klasse von allen Links und der Hauptnavigation
     linkHTTP.classList.remove('active');
     linkHTTPS.classList.remove('active');
     linkIDE.classList.remove('active');
     linkPHISHING.classList.remove('active');
+    linkVERSIONCONTROL.classList.remove('active');
     navIT.classList.remove('active');
 
     // Bestimme die Datei, die geladen werden soll
@@ -43,6 +45,13 @@ function loadContent(page) {
             <a href="#" onclick="loadContent('startseite')">Startseite</a> > IDE
         `;
         linkPHISHING.classList.add('active'); // Markiere den IDE-Link als aktiv
+        navIT.classList.add('active'); // Halte die Hauptnavigation IT geöffnet
+    }else if (page === 'versioncontrol') {
+        file = 'versioncontrol.html';
+        breadcrumb.innerHTML = `
+            <a href="#" onclick="loadContent('startseite')">Startseite</a> > IDE
+        `;
+        linkVERSIONCONTROL.classList.add('active'); // Markiere den IDE-Link als aktiv
         navIT.classList.add('active'); // Halte die Hauptnavigation IT geöffnet
     } else if (page === 'startseite') {
         // Lade den ursprünglichen Inhalt der Startseite
