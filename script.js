@@ -2,24 +2,24 @@ function loadContent(page) {
     const content = document.getElementById('content');
     const breadcrumb = document.getElementById('breadcrumb');
     const navIT = document.getElementById('nav-it'); // Hauptnavigation IT
-    const linkAPI = document.getElementById('link-api');
+    const linkHTTP = document.getElementById('link-http');
     const linkScrum = document.getElementById('link-scrum');
     const linkIDE = document.getElementById('link-ide');
 
     // Entferne die aktive Klasse von allen Links und der Hauptnavigation
-    linkAPI.classList.remove('active');
+    linkHTTP.classList.remove('active');
     linkScrum.classList.remove('active');
     linkIDE.classList.remove('active');
     navIT.classList.remove('active');
 
     // Bestimme die Datei, die geladen werden soll
     let file = '';
-    if (page === 'api') {
-        file = 'api.html';
+    if (page === 'http') {
+        file = 'http.html';
         breadcrumb.innerHTML = `
-            <a href="#" onclick="loadContent('startseite')">Startseite</a> > API
+            <a href="#" onclick="loadContent('startseite')">Startseite</a> > HTTP
         `;
-        linkAPI.classList.add('active'); // Markiere den API-Link als aktiv
+        linkHTTP.classList.add('active'); // Markiere den HTTP-Link als aktiv
         navIT.classList.add('active'); // Halte die Hauptnavigation IT geöffnet
     } else if (page === 'scrum') {
         file = 'scrum.html';
@@ -63,7 +63,7 @@ function loadContent(page) {
 
 function searchTerms() {
     const searchInput = document.getElementById('search-input').value.toLowerCase();
-    const files = ['index.html', 'api.html', 'scrum.html', 'ide.html']; // Liste der Dateien, die durchsucht werden sollen
+    const files = ['index.html', 'http.html', 'scrum.html', 'ide.html']; // Liste der Dateien, die durchsucht werden sollen
 
     if (!searchInput) {
         alert('Bitte geben Sie einen Suchbegriff ein.');
