@@ -5,11 +5,13 @@ function loadContent(page) {
     const linkHTTP = document.getElementById('link-http');
     const linkHTTPS = document.getElementById('link-https');
     const linkIDE = document.getElementById('link-ide');
+    const linkPHISHING = document.getElementById('link-phishing');
 
     // Entferne die aktive Klasse von allen Links und der Hauptnavigation
     linkHTTP.classList.remove('active');
     linkHTTPS.classList.remove('active');
     linkIDE.classList.remove('active');
+    linkPHISHING.classList.remove('active');
     navIT.classList.remove('active');
 
     // Bestimme die Datei, die geladen werden soll
@@ -34,6 +36,13 @@ function loadContent(page) {
             <a href="#" onclick="loadContent('startseite')">Startseite</a> > IDE
         `;
         linkIDE.classList.add('active'); // Markiere den IDE-Link als aktiv
+        navIT.classList.add('active'); // Halte die Hauptnavigation IT geöffnet
+    }else if (page === 'phishing') {
+        file = 'phishing.html';
+        breadcrumb.innerHTML = `
+            <a href="#" onclick="loadContent('startseite')">Startseite</a> > IDE
+        `;
+        linkPHISHING.classList.add('active'); // Markiere den IDE-Link als aktiv
         navIT.classList.add('active'); // Halte die Hauptnavigation IT geöffnet
     } else if (page === 'startseite') {
         // Lade den ursprünglichen Inhalt der Startseite
@@ -63,7 +72,7 @@ function loadContent(page) {
 
 function searchTerms() {
     const searchInput = document.getElementById('search-input').value.toLowerCase();
-    const files = ['index.html', 'http.html', 'scrum.html', 'ide.html']; // Liste der Dateien, die durchsucht werden sollen
+    const files = ['index.html', 'http.html', 'https.html', 'ide.html', 'phishing.html']; // Liste der Dateien, die durchsucht werden sollen
 
     if (!searchInput) {
         alert('Bitte geben Sie einen Suchbegriff ein.');
