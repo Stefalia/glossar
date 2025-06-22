@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glossar - log7-Consult GmbH</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -265,8 +264,26 @@
     </div>
     <footer>
         <p>© 2025 Log7-Consult GmbH</p>
+        <p id="lastModified">Wird geladen ...</p>
     </footer>
     <script src="script.js">
+    </script>
+    <script>
+        const rawModified = document.lastModified;
+        console.log("lastModified:", rawModified); // Test-Ausgabe
+
+        const modifiedDate = new Date(rawModified);
+        if (!isNaN(modifiedDate)) {
+            const options = {
+                weekday: 'long', year: 'numeric', month: 'long',
+                day: 'numeric', hour: '2-digit', minute: '2-digit'
+            };
+            document.getElementById("lastModified").textContent =
+                "Letzte Änderung: " + modifiedDate.toLocaleDateString('de-DE', options);
+        } else {
+            document.getElementById("lastModified").textContent =
+                "Letzte Änderung: unbekannt";
+        }
     </script>
 </body>
 </html>

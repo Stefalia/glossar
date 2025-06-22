@@ -229,12 +229,12 @@ main {
     border-color: #006d6f; /* Petrol-Farbe */
 }
 
-.last-modified {
-    position: absolute;
+#last-modified {
     bottom: 10px;
-    left: 10px;
-    color: gray;
+    right: 10px;
     font-size: 12px;
+    color: gray;
+    float: right;
 }
 
 h1 {
