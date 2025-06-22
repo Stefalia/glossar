@@ -15,7 +15,6 @@ header {
 
 p {
     line-height: 25px;
-    margin-right: 90px;
 }
 
 li {
@@ -213,7 +212,7 @@ main {
 .search-container {
     display: flex;
     align-items: center;
-    margin-right: 90px;
+    margin-right: 80px;
 }
 
 #search-input {
@@ -232,7 +231,7 @@ main {
 
 .date-time {
     float: right;
-    margin-right: 50px;
+    margin-right: 80px;
     text-align: right;
     color: lightgray;
 }
@@ -262,4 +261,32 @@ footer {
     position: relative; /* Ermöglicht die Positionierung des Fußbereichs */
     bottom: 0; /* Positioniert den Fußbereich am unteren Rand */
     width: 100%; /* Nimmt die volle Breite ein */
+}
+
+
+.intro-container {
+    display: flex;
+    align-items: flex-start; /* Text bleibt oben, Bild beginnt auf gleicher Höhe */
+    gap: 20px; /* Abstand zwischen Text und Bild */
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Für kleinere Bildschirme */
+}
+
+.intro-text {
+    flex: 2; /* Größerer Bereich für Text */
+    min-width: 300px;
+    
+}
+
+.intro-image {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 80px;
+    margin-top: 20px;
+}
+
+.glossar-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
 }
