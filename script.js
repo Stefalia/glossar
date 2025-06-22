@@ -3,12 +3,12 @@ function loadContent(page) {
     const breadcrumb = document.getElementById('breadcrumb');
     const navIT = document.getElementById('nav-it'); // Hauptnavigation IT
     const linkHTTP = document.getElementById('link-http');
-    const linkScrum = document.getElementById('link-scrum');
+    const linkHTTPS = document.getElementById('link-https');
     const linkIDE = document.getElementById('link-ide');
 
     // Entferne die aktive Klasse von allen Links und der Hauptnavigation
     linkHTTP.classList.remove('active');
-    linkScrum.classList.remove('active');
+    linkHTTPS.classList.remove('active');
     linkIDE.classList.remove('active');
     navIT.classList.remove('active');
 
@@ -21,12 +21,12 @@ function loadContent(page) {
         `;
         linkHTTP.classList.add('active'); // Markiere den HTTP-Link als aktiv
         navIT.classList.add('active'); // Halte die Hauptnavigation IT geöffnet
-    } else if (page === 'scrum') {
-        file = 'scrum.html';
+    } else if (page === 'https') {
+        file = 'https.html';
         breadcrumb.innerHTML = `
             <a href="#" onclick="loadContent('startseite')">Startseite</a> > Scrum
         `;
-        linkScrum.classList.add('active'); // Markiere den Scrum-Link als aktiv
+        linkHTTPS.classList.add('active'); // Markiere den Scrum-Link als aktiv
         navIT.classList.add('active'); // Halte die Hauptnavigation IT geöffnet
     } else if (page === 'ide') {
         file = 'ide.html';
