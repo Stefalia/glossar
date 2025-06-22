@@ -191,6 +191,8 @@ main {
 }
 
 .alphabet-container .alphabet-item ul li {
+    position: relative; /* Ermöglicht die Anpassung der Breite */
+    width: 100%; /* Nimmt die gesamte Breite des Containers ein */
     color: gray; /* Schriftfarbe der Listenpunkte bleibt Grau */
 }
 
@@ -199,8 +201,11 @@ main {
 }
 
 .alphabet-container .alphabet-item ul li a {
+    display: block; /* Macht den Link zu einem Blockelement */
+    width: 100%; /* Nimmt die gesamte Breite des Containers ein */
     text-decoration: none; /* Entfernt die Unterstreichung */
     color: gray; /* Setzt die Schriftfarbe auf Grau */
+    box-sizing: border-box; /* Bezieht Padding und Border in die Breite ein */
 }
 
 .alphabet-container .alphabet-item ul li a:hover {
