@@ -13,6 +13,15 @@ header {
     padding: 10px;
 }
 
+p {
+    line-height: 25px;
+    margin-right: 90px;
+}
+
+li {
+    line-height: 23px;
+}
+
 .headline h1 {
     margin: 0;
     margin-left:285px;
