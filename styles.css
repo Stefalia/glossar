@@ -297,3 +297,13 @@ footer {
     height: auto;
     border-radius: 6px;
 }
+
+.linkedText {
+    color: #006d6f; /* Petrol-Farbe */
+    font-weight: bold;
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+span {
+    font-weight: bold;
+}
