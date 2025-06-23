@@ -174,7 +174,9 @@ main {
 
 .alphabet-item {
     width: 30%;
-    padding: 15px;
+    
+    padding-left: 0px;
+    padding-right: 25px;
 }
 
 .alphabet-header {
