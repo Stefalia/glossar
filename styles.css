@@ -307,3 +307,39 @@ footer {
 span {
     font-weight: bold;
 }
+
+/* Allgemeiner Stil für Tabellen */
+.styled-table {
+    width: 100%; /* Tabelle nimmt die gesamte Breite ein */
+    max-width: calc(100% - 80px); /* Tabelle endet 80px vor dem rechten Rand */
+    border-collapse: collapse; /* Entfernt doppelte Ränder */
+    margin-top: 20px; /* Abstand oberhalb der Tabelle */
+    font-size: 14px; /* Schriftgröße */
+    border: none; /* Rahmen um die Tabelle */
+}
+
+/* Stil für den Tabellen-Header */
+.styled-table thead th {
+    color: #006d6f; /* Petrol-Farbe */
+    font-weight: bold; /* Fettschrift für den Header */
+    padding: 10px; /* Innenabstand */
+    text-align: left; /* Text linksbündig */
+    border-bottom: 3px solid #006d6f; /* Trennlinie unter dem Header */
+}
+
+/* Stil für die Tabellenzellen */
+.styled-table tbody td {
+    padding: 10px; /* Innenabstand */
+    border-bottom: 1px solid #ddd; /* Trennlinie zwischen den Zeilen */
+    text-align: left; /* Text linksbündig */
+}
+
+/* Stil für die erste Spalte */
+.styled-table td:first-child {
+    font-weight: bold; /* Fettschrift für die erste Spalte */
+}
+
+/* Stil für die letzte Zeile */
+.styled-table tr:last-child td {
+    border-bottom: none; /* Entfernt die Trennlinie unter der letzten Zeile */
+}
