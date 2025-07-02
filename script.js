@@ -83,11 +83,23 @@ function loadContent(page) {
             })
             .then(html => {
                 content.innerHTML = html;
+
+                // Suchfeld ausblenden, wenn NICHT Startseite
+                const searchContainer = document.querySelector('.search-container');
+                if (searchContainer) {
+                    searchContainer.style.display = 'none';
+                }
             })
             .catch(error => {
                 console.error('Fehler beim Laden der Seite:', error);
                 content.innerHTML = '<p>Fehler beim Laden der Seite.</p>';
             });
+    } else {
+        // Wenn Startseite, Suchfeld anzeigen
+        const searchContainer = document.querySelector('.search-container');
+        if (searchContainer) {
+            searchContainer.style.display = '';
+        }
     }
 }
 
