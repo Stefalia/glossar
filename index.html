@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <div class="headline">
+        <div class="header-title">
             <h1>Glossar</h1>
         </div>
         <div class="logo">
@@ -15,6 +15,7 @@
         </div>
     </header>
     <div class="layout">
+        <!-- Navigation -->
         <nav>
             <ul class="main-nav">
                 <li class="nav-item" id="nav-it">
@@ -33,14 +34,16 @@
         </nav>
         <div class="container">
             <main>
+                <!-- Breadcrumb / Suchfeld -->
                 <div class="breadcrumb-container">
+                    <!-- Breadcrumb -->
                     <div class="breadcrumb" id="breadcrumb">
                         <a href="#" onclick="loadContent('startseite')">Startseite</a>
                     </div>
+                    <!-- Suchfeld -->
                     <div class="search-container">
                         <form id="search-form" onsubmit="searchTerms(); return false;">
                             <input type="text" id="search-input" placeholder="Suchbegriff eingeben" />
-                            
                         </form>
                     </div>
                 </div>
@@ -53,17 +56,18 @@
                                 Kenn Sie das Gefühl? Sie sitzen in einem Meeting und auf eimal werden Begriffe genannt, die Sie noch niemals gehört haben? <br>
                                 Blockchain? Baud? Phishing? - Was soll das alles sein? <br>
                             </p>
-                            <p>Fachliche und technisch bezogene Begriffe sind nicht immer leicht zu verstehen. <strong>Sie sind damit nicht allein!</strong>  <br>
+                            <p class="text">Fachliche und technisch bezogene Begriffe sind nicht immer leicht zu verstehen. <strong>Sie sind damit nicht allein!</strong>  <br>
                                 Um Sie zu unterstützen haben wir uns daher entschieden ein Glossar für Sie bereitzustellen.
                                 Zur Zeit handelt es sich um die umfangreichen Themenbereiche IT, Marketing und Logistik. Die Liste der Begriffe wird stetig erweitert.</p>
-                            <p>
+                            <p class="text">
                                 Dazu sind wir auf Sie angewiesen. Wenn Sie Ideen oder Wünsche für Begriffe haben, die hier in der Liste noch fehlen, bitten wir Sie, uns Ihre Vorschläge mitzuteilen.
                                 Wir werden versuchen, Ihre Wünsche zeitnah umzusetzen. <br>
                                 Ein unkomplizierter und schneller Weg um Ihre Vorschläge einzureichen, wird in den kommenden Tagen bekannt gegeben und hier dokumentiert werden.
                             </p>
                         </div>
-                        <div class="intro-image">
-                            <img src="Software_Engineering_Informatik.jpg" alt="Bild mit verschiedenen technischen Fachbegriffen aus der IT / Quelle: Immanuel-Kant-Schule" class="glossar-image">
+                        <div>
+                            <img src="Software_Engineering_Informatik.jpg" alt="Bild mit verschiedenen technischen Fachbegriffen aus der IT" class="images">
+                            <p class="caption">Quelle: Immanuel-Kant-Schule</p>
                         </div>
                     </div>
                 <div class="alphabet-container">
@@ -112,7 +116,6 @@
                                 <li>FTP</li>
                             </ul>
                         </div>
-                        <!-- Neue alphabet-item-Container -->
                         <div class="alphabet-item">
                             <div class="alphabet-header">G</div>
                             <ul>
@@ -278,13 +281,20 @@
     </div>
     
     <footer>
-        <p>© 2025 Log7-Consult GmbH</p>
+        <p>
+            Log7-Consult GmbH <br> 
+            Impressum <br>
+            Kontakt
+        </p>
     </footer>
+
     <script src="script.js">
     </script>
+
+<!-- Anzeige Datum und Uhrzeit der letzten Änderung -->
     <script>
         const rawModified = document.lastModified;
-        console.log("lastModified:", rawModified); // Test-Ausgabe
+        console.log("lastModified:", rawModified);
 
         const modifiedDate = new Date(rawModified);
         if (!isNaN(modifiedDate)) {

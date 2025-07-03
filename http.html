@@ -8,33 +8,41 @@
 </head>
 <body>
     <h1>HTTP</h1>
-    <p class="text">
-        HTTP steht für <i>Hypertext Transfer Protocol</i>. Das Protokoll diente ursprünglich dazu Hypertext-Daten von einem Computer zu einem andere Computer zu übertragen. <br>
-        Der Grundgedanke war, dass Wissenschaftler ihre Forschungsergebnisse untereinander weltweit möglichst schnell austauschen wollten.<br>
-        Heutzutage wird es primär zur Übertaragung von Webseiten von einem Webserver zu einem Webbrowser (z. B. Firefox) genutzt. Ohne HTTP wäre das Surfen im Internet, wie wir es kennen, nicht möglich.
-    </p>
-    <h4>Ablauf beim Aufruf einer Webseite</h4>
-    <p class="text">Der Browser sendet eine sogenannte HTTP-Anfrage an den Server. Darin steht zum Beispiel, dass der Browser eine bestimmte Datei – etwa eine HTML-Seite – haben möchte. <br>
-        Der Server verarbeitet die Anfrage und antwortet mit einer HTTP-Antwort, in der die angeforderten Daten zurückgeschickt werden.
-    </p>
-    <p class="text">
-        HTTP ist ein sogenanntes zustandsloses Protokoll. Das bedeutet, dass der Server sich nicht merkt, wer eine Anfrage geschickt hat oder was davor passiert ist. <br>
-        Anfrage wird unabhängig behandelt. Um dennoch Sitzungen oder Anmeldungen zu ermöglichen, werden zusätzliche Techniken wie Cookies eingesetzt.
-    </p>
-    <h4>Überblick der wichtigsten HTTP-Methoden</h4>
-    <ul>
-        <li>GET</li>
-        <li>POST</li>
-        <li>PUT</li>
-        <li>DELETE</li>
-    </ul>
-    <p class="text">Diese Methoden helfen dabei, die Kommunikation zwischen Client (z. B. deinem Browser) und Server klar und strukturiert zu gestalten. Jede Methode hat ihren spezifischen Einsatzzweck <br>
-        und trägt dazu bei, dass moderne Webanwendungen zuverlässig funktionieren.
-    </p>
-    <br><br>
-    <p class="text"
-        Ein weiteres wichtiges Thema ist die Sicherheit.  Deshalb sieht man heute fast überall "https://" anstelle von "http://". Das "s" steht für "secure", also sicher. <br>
-        <a class="linkedText" href="#" onclick="loadContent('https')" id="link-https">HTTPS</a> bedeutet, dass die Daten verschlüsselt übertragen werden, sodass niemand sie unterwegs mitlesen oder verändern kann.
-    </p>
+    <div class="intro-container">
+        <div class="intro-text">
+            <p class="text">
+                HTTP steht für <i>Hypertext Transfer Protocol</i>. Das Protokoll diente ursprünglich dazu Hypertext-Daten von einem Computer zu einem andere Computer zu übertragen. <br>
+                Der Grundgedanke war, dass Wissenschaftler ihre Forschungsergebnisse untereinander weltweit möglichst schnell austauschen wollten.<br>
+                Heutzutage wird es primär zur Übertaragung von Webseiten von einem Webserver zu einem Webbrowser (z. B. Firefox) genutzt. Ohne HTTP wäre das Surfen im Internet, wie wir es kennen, nicht möglich.
+            </p>
+            <h4>Ablauf beim Aufruf einer Webseite</h4>
+            <p class="text">Der Browser sendet eine sogenannte HTTP-Anfrage an den Server. Darin steht zum Beispiel, dass der Browser eine bestimmte Datei – etwa eine HTML-Seite – haben möchte. <br>
+                Der Server verarbeitet die Anfrage und antwortet mit einer HTTP-Antwort, in der die angeforderten Daten zurückgeschickt werden.
+            </p>
+            <p class="text">
+                HTTP ist ein sogenanntes zustandsloses Protokoll. Das bedeutet, dass der Server sich nicht merkt, wer eine Anfrage geschickt hat oder was davor passiert ist. <br>
+                Anfrage wird unabhängig behandelt. Um dennoch Sitzungen oder Anmeldungen zu ermöglichen, werden zusätzliche Techniken wie Cookies eingesetzt.
+            </p>
+            <h4>Überblick der wichtigsten HTTP-Methoden</h4>
+            <ul>
+                <li>GET</li>
+                <li>POST</li>
+                <li>PUT</li>
+                <li>DELETE</li>
+            </ul>
+            <p class="text">Diese Methoden helfen dabei, die Kommunikation zwischen Client (z. B. deinem Browser) und Server klar und strukturiert zu gestalten. Jede Methode hat ihren spezifischen Einsatzzweck <br>
+                und trägt dazu bei, dass moderne Webanwendungen zuverlässig funktionieren.
+            </p>
+            <br>
+            <p class="text">
+                Ein weiteres wichtiges Thema ist die Sicherheit.  Deshalb sieht man heute fast überall "https://" anstelle von "http://". Das "s" steht für "secure", also sicher. <br>
+                <a class="linkedText" href="#" onclick="loadContent('https')" id="link-https">HTTPS</a> bedeutet, dass die Daten verschlüsselt übertragen werden, sodass niemand sie unterwegs mitlesen oder verändern kann.
+            </p>
+        </div>
+        <div>
+            <img src="Software_Engineering_Informatik.jpg" alt="Bild mit verschiedenen technischen Fachbegriffen aus der IT" class="images">
+            <p class="caption">Quelle: Immanuel-Kant-Schule</p>
+        </div>
+    </div>
 </body>
 </html>
