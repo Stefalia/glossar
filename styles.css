@@ -34,10 +34,9 @@ li {
 }
 
 .logo {
-    background-color: white;
-    color: black;
     padding: 10px;
     text-align: center;
+    margin-right: 110px;
 }
 
 .layout {

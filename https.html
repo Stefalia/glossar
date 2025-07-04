@@ -1,86 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTTPS</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>HTTPS</h1>
-    <p class="text">
-        HTTPS steht für <i>Hypertext Transfer Protocol Secure</i>. Es wird als sichere Variante des HTTP-Protokolls bezeichnet. HTTP sorgt für den grundlegenden <br>
-        Informationsaustausch zwischen Browser und Server. HTTPS sorgt dafür dass dieser Austausch von Daten <span>verschlüsselt und geschützt</span> abläuft.
-    </p>
-    <h4>Hauptunterschied zu HTTP</h4>   
-    <p class="text">
-        Man erkennt eine HTTPS-Verbindung leicht am kleinen Schloss-Symbol in der Adresszeile des Browsers sowie an der Webadresse, die mit „https://“ beginnt. <br>
-        Das Schloss zeigt an, dass die Verbindung sicher ist und ein gültiges <span>SSL-Zertifikat</span> vorhanden ist. Dieses Zertifikat wird von einer sogenannten <br>
-        Zertifizierungsstelle (CA) ausgestellt und bestätigt, dass die Webseite echt und vertrauenswürdig ist.
-    </p> 
-    <h4>Weiterer Vorteil HTTPS</h4>  
-    <p class="text">
-        Ein weiterer Vorteil von HTTPS ist, dass Google und andere Suchmaschinen <span>Webseiten mit HTTPS bevorzugen</span>, was sich positiv auf das Ranking auswirkt. <br>
-        Außerdem blockieren moderne Browser manchmal sogar den Zugriff auf Webseiten ohne HTTPS, weil sie als unsicher gelten.
-    </p> 
-    <h4>Vergleich <a class="linkedText" href="#" onclick="loadContent('http')" id="link-http">HTTP</a> und HTTPS</h4> 
-    <table class="styled-table">
-        <thead>
-            <tr>
-                <th>Kriterium</th>
-                <th>HTTP</th>
-                <th>HTTPS</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Abkürzung für</td>
-                <td>Hypertext Transfer Protocol</td>
-                <td>Hypertext Transfer Protocol Secure</td>
-            </tr>
-            <tr>
-                <td>Sicherheit</td>
-                <td>Keine Verschlüsselung – Daten werden im Klartext übertragen</td>
-                <td>Verschlüsselte Verbindung durch SSL/TLS</td>
-            </tr>
-            <tr>
-                <td>Vertraulichkeit der Daten</td>
-                <td>Nicht geschützt, kann von Dritten mitgelesen werden</td>
-                <td>Daten sind durch Verschlüsselung vor Zugriff geschützt</td>
-            </tr>
-            <tr>
-                <td>Erkennbar durch</td>
-                <td>URL beginnt mit http://</td>
-                <td>URL beginnt mit https:// und zeigt ein Schloss-Symbol im Browser</td>
-            </tr>
-            <tr>
-                <td>Verwendung von Zertifikaten</td>
-                <td>Nein</td>
-                <td>Ja – benötigt ein SSL-/TLS-Zertifikat</td>
-            </tr>
-            <tr>
-                <td>Geeignet für sensible Daten</td>
-                <td>Nein (z. B. Passwörter, Zahlungsinfos nicht sicher)</td>
-                <td>Ja – sicher für Passwörter, Bankdaten usw.</td>
-            </tr>
-            <tr>
-                <td>SEO-Vorteil</td>
-                <td>Kein Vorteil bei Suchmaschinen</td>
-                <td>Besseres Ranking bei Google & Co.</td>
-            </tr>
-            <tr>
-                <td>Moderne Webstandards</td>
-                <td>Veraltet, wird teils als unsicher eingestuft</td>
-                <td>Aktueller Standard für sichere Webseiten</td>
-            </tr>
-        </tbody>
-    </table>
-    <h4>Fazit</h4>  
-    <p class="text">
-        HTTPS bietet deutliche Vorteile in Bezug auf Sicherheit, Datenschutz und Vertrauen. Während HTTP heute meist nur noch bei Testseiten oder internen Netzwerken verwendet wird, <br>
-        ist HTTPS der empfohlene und weit verbreitete Standard im öffentlichen Internet.
-        Wenn du magst, kann ich dir auch erklären, wie ein SSL-Zertifikat funktioniert oder wie man eine Webseite von HTTP auf HTTPS umstellt.
-    </p>
+        <div class="intro-container">
+            <div class="intro-text">
+                <p class="text">
+                    HTTPS steht für <i>Hypertext Transfer Protocol Secure</i>. Es wird als sichere Variante des HTTP-Protokolls bezeichnet. HTTP sorgt für den grundlegenden <br>
+                    Informationsaustausch zwischen Browser und Server. HTTPS sorgt dafür dass dieser Austausch von Daten <span>verschlüsselt und geschützt</span> abläuft.
+                </p>
+                <h4>Hauptunterschied zu HTTP</h4>   
+                <p class="text">
+                    Man erkennt eine HTTPS-Verbindung leicht am kleinen Schloss-Symbol in der Adresszeile des Browsers sowie an der Webadresse, die mit „https://“ beginnt. <br>
+                    Das Schloss zeigt an, dass die Verbindung sicher ist und ein gültiges <span>SSL-Zertifikat</span> vorhanden ist. Dieses Zertifikat wird von einer sogenannten <br>
+                    Zertifizierungsstelle (CA) ausgestellt und bestätigt, dass die Webseite echt und vertrauenswürdig ist.
+                </p> 
+                <h4>Weiterer Vorteil HTTPS</h4>  
+                <p class="text">
+                    Ein weiterer Vorteil von HTTPS ist, dass Google und andere Suchmaschinen <span>Webseiten mit HTTPS bevorzugen</span>, was sich positiv auf das Ranking auswirkt. <br>
+                    Außerdem blockieren moderne Browser manchmal sogar den Zugriff auf Webseiten ohne HTTPS, weil sie als unsicher gelten.
+                </p> 
+                <h4>Vergleich <a class="linkedText" href="#" onclick="loadContent('http')" id="link-http">HTTP</a> und HTTPS</h4> 
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Kriterium</th>
+                            <th>HTTP</th>
+                            <th>HTTPS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Abkürzung für</td>
+                            <td>Hypertext Transfer Protocol</td>
+                            <td>Hypertext Transfer Protocol Secure</td>
+                        </tr>
+                        <tr>
+                            <td>Sicherheit</td>
+                            <td>Keine Verschlüsselung - Daten werden im Klartext übertragen</td>
+                            <td>Verschlüsselte Verbindung durch SSL/TLS</td>
+                        </tr>
+                        <tr>
+                            <td>Vertraulichkeit der Daten</td>
+                            <td>Nicht geschützt, kann von Dritten mitgelesen werden</td>
+                            <td>Daten sind durch Verschlüsselung vor Zugriff geschützt</td>
+                        </tr>
+                        <tr>
+                            <td>Erkennbar durch</td>
+                            <td>URL beginnt mit http://</td>
+                            <td>URL beginnt mit https:// und zeigt ein Schloss-Symbol im Browser</td>
+                        </tr>
+                        <tr>
+                            <td>Verwendung von Zertifikaten</td>
+                            <td>Nein</td>
+                            <td>Ja - benötigt ein SSL-/TLS-Zertifikat</td>
+                        </tr>
+                        <tr>
+                            <td>Geeignet für sensible Daten</td>
+                            <td>Nein (z. B. Passwörter, Zahlungsinfos nicht sicher)</td>
+                            <td>Ja - sicher für Passwörter, Bankdaten usw.</td>
+                        </tr>
+                        <tr>
+                            <td>SEO-Vorteil</td>
+                            <td>Kein Vorteil bei Suchmaschinen</td>
+                            <td>Besseres Ranking bei Google & Co.</td>
+                        </tr>
+                        <tr>
+                            <td>Moderne Webstandards</td>
+                            <td>Veraltet, wird teils als unsicher eingestuft</td>
+                            <td>Aktueller Standard für sichere Webseiten</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>Fazit</h4>  
+                <p class="text">
+                    HTTPS bietet deutliche Vorteile in Bezug auf Sicherheit, Datenschutz und Vertrauen. Während HTTP heute meist nur noch bei Testseiten oder internen Netzwerken verwendet wird, <br>
+                    ist HTTPS der empfohlene und weit verbreitete Standard im öffentlichen Internet.
+                    Wenn du magst, kann ich dir auch erklären, wie ein SSL-Zertifikat funktioniert oder wie man eine Webseite von HTTP auf HTTPS umstellt.
+                </p>
+            </div>
+        </div>
 </body>
 </html>
 
