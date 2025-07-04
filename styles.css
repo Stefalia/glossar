@@ -248,7 +248,7 @@ main {
 /* letzte Änderung*/
 .date-time {
     float: right;
-    margin-right: 80px;
+    margin-right: 130px;
     text-align: right;
     color: lightgray;
 }
@@ -306,16 +306,14 @@ footer {
 }
 
 .intro-image {
-    margin-left: 30px;
-    margin-right: 110px;
-    margin-top: 25px;
+    margin: 25px 110px 0 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
 .images {
-max-width: 600px;
+    max-width: 600px;
     display: block;
     height: auto;
     margin: 0;
@@ -351,12 +349,10 @@ max-width: 600px;
     text-align: left;
 }
 
-/* Stil für die erste Spalte */
 .styled-table td:first-child {
-    font-weight: bold; /* Fettschrift für die erste Spalte */
+    font-weight: bold;
 }
 
-/* Stil für die letzte Zeile */
 .styled-table tr:last-child td {
-    border-bottom: none; /* Entfernt die Trennlinie unter der letzten Zeile */
+    border-bottom: none;
 }
